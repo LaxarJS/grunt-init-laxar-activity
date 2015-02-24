@@ -9,14 +9,15 @@
 exports.description = 'Create a LaxarJS activity, including Jasmine specs';
 
 // Template-specific notes to be displayed before question prompts.
-exports.notes = 'For more information about LaxarJS activity best practices, ' +
-  'please see the docs at http://laxarjs.org/docs/activities';
+exports.notes = 'For more information about LaxarJS artifacts, ' +
+   'please see the docs at ' +
+   'https://github.com/LaxarJS/laxar/blob/master/docs/core_concepts.md';
 
 // Template-specific notes to be displayed after question prompts.
-exports.after = 'You can now start developing your activity! For more information ' +
-  'about developing activities with LaxarJS, please see the Getting Started guide:' +
-  '\n\n' +
-  'http://laxarjs.org/docs/getting-started';
+exports.after = 'You can now start developing your widget! For more information ' +
+   'about developing widgets with LaxarJS, please refer to the manuals:' +
+   '\n\n' +
+   'http://laxarjs.org/docs/manuals/index.md';
 
 // Any existing file or directory matching this wildcard will cause a warning.
 exports.warnOn = '*';
@@ -29,12 +30,13 @@ exports.template = function( grunt, init, done ) {
 
    init.process( options, prompts, function( err, props ) {
 
+      props.name = stripType( props.artifact, props.type );
+
       // Files to copy (and process).
       var files = init.filesToCopy( props );
 
-      if( props.author_name === 'aixigo AG' && props.licenses[0] === 'MIT' ) {
-      } else {
-         init.addLicenseFiles(files, props.licenses);
+      if( props.licenses[ 0 ] !== 'MIT' ) {
+         init.addLicenseFiles( files, props.licenses );
       }
 
       // Actually copy (and process) files.
@@ -46,3 +48,7 @@ exports.template = function( grunt, init, done ) {
    });
 
 };
+
+function stripType( string, type ) {
+   return string.replace( new RegExp( '[-_]' + type + '$', 'i' ), '' );
+}
