@@ -8,7 +8,7 @@
    global.laxarSpec = {
       title: '{%= title %} Specification',
       tests: [
-         '{%= name %}.{%= type %}_spec'
+         '{%= artifact %}.spec'
       ]
    };
 } )( this );
