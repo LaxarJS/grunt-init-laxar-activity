@@ -2,6 +2,7 @@
 
 ## Last Changes
 
+- [#4](https://github.com/LaxarJS/grunt-init-laxar-activity/issues/4): Added README.md to template
 - [#6](https://github.com/LaxarJS/grunt-init-laxar-activity/issues/6): Use simplified angular module/controller naming
 - [#5](https://github.com/LaxarJS/grunt-init-laxar-activity/issues/5): Allow hyphen-minus (`-`) in activity names
 
