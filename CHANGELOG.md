@@ -2,6 +2,8 @@
 
 ## Last Changes
 
+- [#7](https://github.com/LaxarJS/grunt-init-laxar-activity/issues/7): Simplified AngularJS controller boilerplate code
+
 
 ## v0.4.0
 
