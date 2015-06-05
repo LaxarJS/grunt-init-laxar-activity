@@ -2,6 +2,9 @@
 
 ## Last Changes
 
+
+## v1.0.0
+
 - [#8](https://github.com/LaxarJS/grunt-init-laxar-activity/issues/8): removed LaxarJS version prompt, cleaned up template
 
 
